@@ -1,0 +1,90 @@
+﻿@page
+@model IndexPageModel
+
+<header class="p-5 mb-5 bg-dark text-white rounded-bottom">
+    <div class="container-fluid">
+        <h4 class="display-4 fw-bold">
+            Active characters
+        </h4>
+        <p class="fs-4">
+            Latest characters found in NoSQL container.
+        </p>
+        <a class="btn btn-outline-light btn-lg" asp-page="/products">
+            View all characters
+        </a>   <br/>
+        <a class="btn btn-outline-light btn-lg" asp-page="/alter">
+            Alter all characters
+        </a>     
+         <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="social" >
+            social skills
+        </a>   
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="physical">
+            physical skills
+        </a> 
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="knowledge">
+            knowledge skills
+        </a> 
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="melee.weapon">
+            melee weapon skills
+        </a> 
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="ranged.weapon">
+            ranged weapon skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="technical">
+            technical skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="mental">
+            mental skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="business">
+            business skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="science">
+            science skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="unarmed.combat">
+            unarmed combat skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="medical">
+            medical skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="vehicle">
+            vehicle skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="influence">
+            influence skills
+        </a>
+        <a class="btn btn-outline-light btn-lg" asp-page="/skills" asp-route-q="craft">
+            craft skills
+        </a>
+    </div>
+</header>
+<div class="row" data-masonry='{"percentPosition": true }'>
+    @foreach(Character item in Model.Characters ?? Enumerable.Empty<Character>())
+    {
+        <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card">
+                <h6 class="card-header bg-primary text-white d-flex w-100 justify-content-between">
+                 
+                    <span class="badge text-bg-light">
+                        @item.categoryName
+                    </span>
+              
+                </h6>
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        @item.name
+                    </h5>
+                    <p class="card-text text-center">@item.description</p>
+                    ST: @item.ST 
+                    DX: @item.DX
+                    IQ: @item.IQ
+                    HT: @item.HT
+                </div>
+                <h6 class="card-footer bg-secondary text-white text-center">
+                    
+                </h6>
+            </div>
+        </div>
+    }
+</div>

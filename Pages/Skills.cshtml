@@ -1,0 +1,62 @@
+﻿@page "{q?}"
+@model SkillsPageModel
+
+<header class="p-5 mb-5 bg-dark text-white rounded-bottom">
+    <div class="container-fluid">
+        <h4 class="display-4 fw-bold">
+            Active skills
+        </h4>
+        <p class="fs-4">
+            Latest skills found in NoSQL container.
+        </p>
+        <a class="btn btn-outline-light btn-lg" asp-page="/products">
+            View all skills
+        </a>   <br/>
+          
+    </div>
+</header>
+<div class="row" data-masonry='{"percentPosition": true }'>
+    @foreach(Skill item in Model.Skill ?? Enumerable.Empty<Skill>())
+    {
+        <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card">
+                <h6 class="card-header bg-primary text-white d-flex w-100 justify-content-between">
+                 
+                    <span class="badge text-bg-light">
+                        @item.Attribute
+                        @item.Difficulty
+                    </span>
+
+                    <span class="badge text-bg-light">
+                        @item.PartitionKey
+                    </span>
+              
+                </h6>
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        @item.SkillName
+                    </h5>
+
+               
+                    <p class="card-text text-left">@item.Description</p>
+
+                    <span class="card-text text-bg-light">@item.Notes</span>
+
+                      @foreach(string pre in item.Prerequisites?? Enumerable.Empty<string>())
+                {
+                    <h6>Prerequisite: @pre</h6>
+                }
+
+                 @foreach(SkillDefault def in item.Defaults?? Enumerable.Empty<SkillDefault>())
+                {
+                    <h6>Default: @def.AttributeName @def.SkillName @def.SkillModifier</h6>
+                }
+           
+                </div>
+                <h6 class="card-footer bg-secondary text-white text-center">
+                    
+                </h6>
+            </div>
+        </div>
+    }
+</div>

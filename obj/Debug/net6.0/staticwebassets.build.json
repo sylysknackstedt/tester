@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "bQlTEUNwIGxCDtic0Mny8Vnw7uAVivRnNWJqpVGrEgE=",
+  "Source": "tester",
+  "BasePath": "_content/tester",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "tester\\wwwroot",
+      "Source": "tester",
+      "ContentRoot": "D:\\tester\\wwwroot\\",
+      "BasePath": "_content/tester",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\tester\\wwwroot\\favicon.ico",
+      "SourceId": "tester",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\tester\\wwwroot\\",
+      "BasePath": "_content/tester",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\tester\\wwwroot\\icon.png",
+      "SourceId": "tester",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\tester\\wwwroot\\",
+      "BasePath": "_content/tester",
+      "RelativePath": "icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icon.png"
+    }
+  ]
+}
